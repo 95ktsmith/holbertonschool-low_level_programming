@@ -1,0 +1,1 @@
+Directory for 0x00-hello_world, a project about understanding how to use the gcc compiler and writing first C programs.
