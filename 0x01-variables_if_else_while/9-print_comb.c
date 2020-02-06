@@ -2,28 +2,22 @@
 
 /**
  * main - entry point
- * Description: Prints every combination of single digit numbers
+ * Description: Prints all combinations of single digits in an organized list
  * Return: Always 0
  */
 int main(void)
 {
 	int i;
-	int j;
-	int k = 0;
 
 	for (i = 0; i < 10; i++)
 	{
-		for (j = k; j < 10; j++)
+		putchar (i + '0');
+		if (i != 9)
 		{
-			putchar (i + '0');
-			putchar (j + '0');
-			if (i != 9 || j != 9)
-			{
-				putchar (',');
-				putchar (' ');
-			}
+			putchar (',');
+			putchar (' ');
 		}
-		k++;
 	}
+	putchar ('\n');
 	return (0);
 }
