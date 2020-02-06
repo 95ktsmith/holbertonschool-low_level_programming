@@ -2,17 +2,18 @@
 
 /**
  * main - entry point
- * Description: Prints all single digit numbers of base 10, starting from 0.
+ * Description: Prints every combination of single digit numbers
  * Return: Always 0
  */
 int main(void)
 {
 	int i;
 	int j;
+	int k = 0;
 
 	for (i = 0; i < 10; i++)
 	{
-		for (j = 0; j < 10; j++)
+		for (j = k; j < 10; j++)
 		{
 			putchar (i + '0');
 			putchar (j + '0');
@@ -22,7 +23,7 @@ int main(void)
 				putchar (' ');
 			}
 		}
+		k++;
 	}
-
 	return (0);
 }
