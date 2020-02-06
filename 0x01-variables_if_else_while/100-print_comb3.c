@@ -15,12 +15,15 @@ int main(void)
 	{
 		for (j = k; j < 10; j++)
 		{
-			putchar (i + '0');
-			putchar (j + '0');
-			if (i != 9 || j != 9)
+			if (i != j)
 			{
-				putchar (',');
-				putchar (' ');
+				putchar (i + '0');
+				putchar (j + '0');
+				if (i != 8)
+				{
+					putchar (',');
+					putchar (' ');
+				}
 			}
 		}
 		k++;
