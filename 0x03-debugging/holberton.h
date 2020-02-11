@@ -1,6 +1,7 @@
 #ifndef _HOLBERTON_H_
 #define _HOLBERTON_H_
 
+#include <stdio.h>
 void _putchar(char);
 
 int positive_or_negative(int);
