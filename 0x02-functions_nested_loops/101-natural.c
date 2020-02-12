@@ -2,17 +2,14 @@
 #include <stdio.h>
 
 /**
- * _abs - Computes the absolute value of an integer
- * @n: The number to be checked
- * Description: Computes the absolute value of an integer
- * Return: Asolute value in @n
+ * main - entry point
+ * Description: Adds together numbers divisible by 3 or 5 below 1024, and print
+ * Return: Always 0
  */
 
-void print_sum()
+int main(void)
 {
 	int i, sum;
-
-	sum = 0;
 
 	for (i = 0; i <= 1024; i++)
 	{
@@ -21,4 +18,5 @@ void print_sum()
 	}
 
 	printf("%i\n", sum);
+	return (0);
 }
