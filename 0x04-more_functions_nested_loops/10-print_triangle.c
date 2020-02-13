@@ -12,7 +12,7 @@ void print_triangle(int size)
 
 	for (row = 0; row < size; row++)
 	{
-		for (spaces = 0; spaces < size - row; spaces++)
+		for (spaces = 0; spaces < size - row - 1; spaces++)
 			_putchar (' ');
 		for (hash = 0; hash < size - (size - row) + 1; hash++)
 			_putchar ('#');
