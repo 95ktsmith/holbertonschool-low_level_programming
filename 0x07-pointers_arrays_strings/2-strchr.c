@@ -1,4 +1,5 @@
 #include "holberton.h"
+#include <stdlib.h>
 
 /**
  * _strchr - String Character
@@ -15,5 +16,9 @@ char *_strchr(char *s, char c)
 
 	while (*p != c && *p != '\0')
 		p++;
-	return (p);
+
+	if (*p == '\0')
+		return (NULL);
+	else
+		return (p);
 }
