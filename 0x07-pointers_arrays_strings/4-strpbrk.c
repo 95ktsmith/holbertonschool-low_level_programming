@@ -25,5 +25,8 @@ char *_strpbrk(char *s, char *accept)
 			}
 		}
 	}
-	return (s + sindex - 1);
+	if (*(s + sindex) == '\0')
+		return (0);
+	else
+		return (s + sindex - 1);
 }
