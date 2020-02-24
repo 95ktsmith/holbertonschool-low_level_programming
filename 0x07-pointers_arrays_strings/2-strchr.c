@@ -1,5 +1,4 @@
 #include "holberton.h"
-#include <stdlib.h>
 
 /**
  * _strchr - String Character
@@ -18,7 +17,7 @@ char *_strchr(char *s, char c)
 		p++;
 
 	if (*p == '\0')
-		return (NULL);
+		return (0);
 	else
 		return (p);
 }
