@@ -16,8 +16,13 @@ char *_strchr(char *s, char c)
 	while (*p != c && *p != '\0')
 		p++;
 
-	if (*p == '\0')
-		return (0);
+	if (c != '\0')
+	{
+		if (*p == '\0')
+			return (0);
+		else
+			return (p);
+	}
 	else
 		return (p);
 }
