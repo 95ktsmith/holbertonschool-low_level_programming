@@ -30,23 +30,3 @@ char *_strstr(char *haystack, char *needle)
 	}
 	return (0);
 }
-
-/**
- * _strlen - String length
- * Description: Gets the length of a string
- * @str: The string
- * Return: Length of the string
- */
-
-int _strlen(char *str)
-{
-	int length = 0;
-
-	while (*(str + length) != '\0')
-		length++;
-
-	if (length == 0)
-		return (0);
-	else
-		return (length - 1);
-}
