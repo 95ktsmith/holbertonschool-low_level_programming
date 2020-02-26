@@ -15,8 +15,7 @@ int _sqrt_recursion(int n)
 		return (-1);
 	else if (n < 2)
 		return (n);
-	else
-	{
+
 		small = (_sqrt_recursion(n / 4)) * 2;
 		large = small + 1;
 
@@ -26,5 +25,4 @@ int _sqrt_recursion(int n)
 			return (small);
 		else
 			return (large);
-	}
 }
