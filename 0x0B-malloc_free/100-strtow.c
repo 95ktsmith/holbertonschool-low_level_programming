@@ -1,7 +1,8 @@
 #include "holberton.h"
 #include <stdlib.h>
+#include <stdio.h>
 int word_count(char *str);
-int *char_count(char *str, int *characters, int words);
+void char_count(char *str, int *characters, int words);
 int _strlen(char *s);
 void populate(char **dst, char *src);
 
@@ -24,7 +25,7 @@ char **strtow(char *str)
 	characters = malloc(words * 4);
 	if (characters == NULL)
 		return (NULL);
-	characters = char_count(str, characters, words);
+	char_count(str, characters, words);
 	dst = malloc((words + 1) * 8);
 	if (dst == NULL)
 		return (NULL);
@@ -101,7 +102,7 @@ int word_count(char *str)
  * Return: An array of the number of characters in each respective word
  */
 
-int *char_count(char *str, int *characters, int words)
+void char_count(char *str, int *characters, int words)
 {
 	int index, char_count, char_index;
 	char prev_char = '0';
@@ -117,18 +118,19 @@ int *char_count(char *str, int *characters, int words)
 			char_count++;
 		else
 		{
-			if (prev_char != ' ')
+			if (prev_char != ' ' && index != 0)
 			{
 				characters[char_index] = char_count;
 				char_count = 0;
 				char_index++;
 			}
 		}
+		prev_char = str[index];
 	}
 	if (characters[char_index] == 0)
+	{
 		characters[char_index] = char_count;
-
-	return (characters);
+	}
 }
 
 /**
