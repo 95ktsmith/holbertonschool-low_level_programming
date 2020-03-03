@@ -58,11 +58,15 @@ void populate(char **dst, char *src)
 		{
 			for (windex = 0; src[windex + sindex] != '\0' &&
 				     src[windex + sindex] != ' '; windex++)
+			{
 				dst[word][windex] = src[sindex + windex];
+			}
 			dst[word][windex] = '\0';
 		}
-		if (src[sindex] == ' ' && prev_char != ' ')
+		if (src[sindex] == ' ' && prev_char != ' ' && sindex != 0)
+		{
 			word++;
+		}
 		prev_char = src[sindex];
 	}
 }
