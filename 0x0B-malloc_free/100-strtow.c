@@ -31,7 +31,7 @@ char **strtow(char *str)
 		return (NULL);
 	for (dstindex = 0; dstindex < words; dstindex++)
 	{
-		dst[dstindex] = malloc(characters[dstindex] + 1);
+		dst[dstindex] = malloc(characters[dstindex] + 4);
 		if (dst[dstindex] == NULL)
 			return (NULL);
 	}
@@ -123,12 +123,14 @@ void char_count(char *str, int *characters, int words)
 			{
 				characters[char_index] = char_count;
 				char_count = 0;
+				if (char_index == words - 1)
+					break;
 				char_index++;
 			}
 		}
 		prev_char = str[index];
 	}
-	if (characters[char_index] == 0)
+	if (characters[char_index] == 0 && char_index < words)
 	{
 		characters[char_index] = char_count;
 	}
