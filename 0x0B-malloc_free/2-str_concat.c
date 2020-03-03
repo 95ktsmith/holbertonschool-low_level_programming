@@ -17,7 +17,7 @@ char *str_concat(char *s1, char *s2)
 	char *dst;
 
 
-       	s1_size = _strlen(s1);
+	s1_size = _strlen(s1);
 	s2_size = _strlen(s2);
 	dst = malloc(s1_size + s2_size + 1);
 
@@ -36,7 +36,7 @@ char *str_concat(char *s1, char *s2)
 	}
 	*(dst + dstindex) = '\0';
 
-       	return (dst);
+	return (dst);
 }
 
 /**
