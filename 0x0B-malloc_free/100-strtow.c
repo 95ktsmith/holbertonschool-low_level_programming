@@ -37,6 +37,7 @@ char **strtow(char *str)
 	}
 	populate(dst, str);
 	dst[words] = NULL;
+	free(characters);
 	return (dst);
 }
 /**
