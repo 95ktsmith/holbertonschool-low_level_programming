@@ -12,7 +12,6 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 {
 	void *pointer;
 	char *filler;
-	unsigned int index;
 
 	if (nmemb == 0 || size == 0)
 		return (NULL);
@@ -22,7 +21,7 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 		return (NULL);
 
 	filler = pointer;
-	for (index = 0; index < nmemb; index++)
-		filler[index] = 0;
+	while (nmemb-- > 0)
+		*filler++ = 0;
 	return (pointer);
 }
