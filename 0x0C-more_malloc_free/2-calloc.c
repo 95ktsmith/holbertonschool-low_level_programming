@@ -1,5 +1,5 @@
-#include "holberton.h"
 #include <stdlib.h>
+#include "holberton.h"
 /**
  * _calloc - character allocate
  * Description: Allocates memory for an array and sets each element to zero
@@ -20,7 +20,7 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 		return (NULL);
 
 	while (nmemb-- > 0)
-		*(pointer + nmemb - 1) = 0;
+		*(pointer + nmemb) = 0;
 
 	return ((void *)pointer);
 }
