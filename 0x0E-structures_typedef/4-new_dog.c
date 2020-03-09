@@ -16,16 +16,21 @@ dog_t *new_dog(char *name, float age, char *owner)
 	dog_t *dog;
 	char *name_cpy;
 	char *owner_cpy;
+	float *age_cpy;
 
 	dog = malloc(sizeof(struct dog));
 	if (!dog)
 		return (NULL);
+	age_cpy = malloc(sizeof(float));
+	if (!age_cpy)
+		return (NULL);
 
+	*age_cpy = age;
 	name_cpy = _strdup(name);
 	owner_cpy = _strdup(owner);
 
 	dog->name = name_cpy;
-	dog->age = age;
+	dog->age = *age_cpy;
 	dog->owner = owner_cpy;
 
 	return (dog);
