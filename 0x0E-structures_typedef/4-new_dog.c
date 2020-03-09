@@ -1,5 +1,7 @@
 #include "dog.h"
 #include <stdlib.h>
+char *_strdup(char *str);
+
 /**
  * new_dog - new dog
  * Description: creates and returns a new dog with given parameters
@@ -11,7 +13,6 @@
 
 dog_t *new_dog(char *name, float age, char *owner)
 {
-	int size = 0;
 	dog_t *dog;
 	char *name_cpy;
 	char *owner_cpy;
@@ -20,24 +21,43 @@ dog_t *new_dog(char *name, float age, char *owner)
 	if (!dog)
 		return (NULL);
 
-	while (*(name + size))
-		size++;
-	name_cpy = malloc(size + 1);
-	if (!name_cpy)
-		return (NULL);
-	name_cpy = name;
-
-	size = 0;
-	while (*(owner + size))
-		size++;
-	owner_cpy = malloc(size + 1);
-	if (!owner_cpy)
-		return (NULL);
-	owner_cpy = owner;
+	name_cpy = _strdup(name);
+	owner_cpy = _strdup(owner);
 
 	dog->name = name_cpy;
 	dog->age = age;
 	dog->owner = owner_cpy;
 
 	return (dog);
+}
+
+/**
+ * _strdup - string duplicate
+ * Description: Duplicates a string
+ * @str: Source string
+ * Return: Pointer to newly created string
+ */
+
+char *_strdup(char *str)
+{
+	int index, size;
+	char *dst;
+
+	if (str == NULL)
+		return (NULL);
+
+	size = 0;
+	while (*(str + size))
+		size++;
+
+	dst = malloc(size + 1);
+	if (dst == NULL)
+		return (NULL);
+
+	for (index = 0; index < size; index++)
+		*(dst + index) = *(str + index);
+
+	*(dst + index) = '\0';
+
+	return (dst);
 }
