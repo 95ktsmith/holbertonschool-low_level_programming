@@ -11,13 +11,29 @@
 
 dog_t *new_dog(char *name, float age, char *owner)
 {
+	int size = 0;
 	dog_t *dog;
-	char *name_cpy = name;
-	char *owner_cpy = owner;
+	char *name_cpy;
+	char *owner_cpy;
 
 	dog = malloc(sizeof(struct dog));
-	if (dog == NULL || name == NULL || owner == NULL)
+	if (!dog || !name || !owner)
 		return (NULL);
+
+	while (*(name + size))
+		size++;
+	name_cpy = malloc(size + 1);
+	if (!name_cpy)
+		return (NULL);
+	name_cpy = name;
+
+	size = 0;
+	while (*(owner + size))
+		size++;
+	owner_cpy = malloc(size + 1);
+	if (!owner_cpy)
+		return (NULL);
+	owner_cpy = owner;
 
 	dog->name = name_cpy;
 	dog->age = age;
