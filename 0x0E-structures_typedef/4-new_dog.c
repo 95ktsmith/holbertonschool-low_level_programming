@@ -17,7 +17,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 	char *owner_cpy;
 
 	dog = malloc(sizeof(struct dog));
-	if (!dog || !name || !owner)
+	if (!dog)
 		return (NULL);
 
 	while (*(name + size))
