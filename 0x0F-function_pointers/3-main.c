@@ -30,7 +30,7 @@ int main(int argc, char **argv)
 	s = *(argv + 2);
 	a = atoi(*(argv + 1));
 	b = atoi(*(argv + 3));
-	if ((*s == '/' || *s == '%') || b == 0)
+	if ((*s == '/' || *s == '%') && b == 0)
 	{
 		printf("Error\n");
 		exit(100);
