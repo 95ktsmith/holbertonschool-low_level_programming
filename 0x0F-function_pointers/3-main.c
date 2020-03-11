@@ -21,13 +21,13 @@ int main(int argc, char **argv)
 		exit(98);
 	}
 
-	if (strlen(*(argv + 2)) != 1)
+	s = *(argv + 2);
+	if (!get_op_func(s))
 	{
 		printf("Error\n");
 		exit(98);
 	}
 
-	s = *(argv + 2);
 	a = atoi(*(argv + 1));
 	b = atoi(*(argv + 3));
 	if ((*s == '/' || *s == '%') && b == 0)
