@@ -22,7 +22,7 @@ int main(int argc, char **argv)
 	}
 
 	s = *(argv + 2);
-	if (!get_op_func(s))
+	if (!get_op_func(s) || strlen(s) != 1)
 	{
 		printf("Error\n");
 		exit(98);
