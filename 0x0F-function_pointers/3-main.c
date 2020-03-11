@@ -25,7 +25,7 @@ int main(int argc, char **argv)
 	if (!get_op_func(s) || strlen(s) != 1)
 	{
 		printf("Error\n");
-		exit(98);
+		exit(99);
 	}
 
 	a = atoi(*(argv + 1));
