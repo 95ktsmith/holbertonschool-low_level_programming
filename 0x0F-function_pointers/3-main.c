@@ -15,27 +15,26 @@ int main(int argc, char **argv)
 	int a, b;
 	char *s;
 
-	if (argc != 4)
+	if (argc != 4 || !**argv)
 	{
 		printf("Error\n");
-		return (-1);
+		exit(98);
 	}
 
 	if (strlen(*(argv + 2)) != 1)
 	{
 		printf("Error\n");
-		return (-1);
-	}
-
-	if (get_op_func(*(argv + 2)) == NULL)
-	{
-		printf("Error\n");
-		return (-1);
+		exit(98);
 	}
 
 	s = *(argv + 2);
 	a = atoi(*(argv + 1));
 	b = atoi(*(argv + 3));
+	if ((*s == '/' || *s == '%') || b == 0)
+	{
+		printf("Error\n");
+		exit(100);
+	}
 
 	printf("%i\n", get_op_func(s)(a, b));
 	return (0);
