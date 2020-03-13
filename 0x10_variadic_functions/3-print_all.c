@@ -58,10 +58,15 @@ void print_all(const char * const format, ...)
 			break;
 		case 's':
 			str = va_arg(args, char *);
-			if (str)
+			switch (str == NULL)
+			{
+			case 0:
 				printf("%s", str);
-			else
+				break;
+			default:
 				printf("(nil)");
+				break;
+			}
 			break;
 		default:
 			findex++;
