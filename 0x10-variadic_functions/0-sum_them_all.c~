@@ -1,0 +1,15 @@
+#include "variadic_functions.h"
+#include <stddef.h>
+#include <stdlib.h>
+
+/**
+ * sum_them_all - Add a list of integers
+ * Description: Adds a list of integers together
+ * @n: Number of integers being added
+ * Return: Sum
+ */
+
+int sum_them_all(const unsigned int n, ...)
+{
+	return (0);
+}

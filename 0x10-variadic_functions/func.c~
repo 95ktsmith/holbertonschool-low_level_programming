@@ -1,0 +1,9 @@
+#include "variadic_functions.h"
+#include <stddef.h>
+#include <stdlib.h>
+
+/**
+ * func
+ * Description:
+ * Return:
+ */
