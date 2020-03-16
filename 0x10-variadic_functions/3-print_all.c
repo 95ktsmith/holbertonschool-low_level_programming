@@ -41,11 +41,9 @@ void print_all(const char * const format, ...)
 	va_list args;
 	char *str;
 
-	if (!format)
-		return;
 	va_start(args, format);
 	findex = 0;
-	while (*(format + findex))
+	while (format && *(format + findex))
 	{
 		switch (*(format + findex))
 		{
