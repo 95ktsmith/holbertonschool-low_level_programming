@@ -11,7 +11,8 @@ void free_rec(listint_t *head);
 void free_listint2(listint_t **head)
 {
 	free_rec(*head);
-	*head = NULL;
+	if (*head)
+		*head = NULL;
 }
 
 /**
@@ -26,5 +27,5 @@ void free_rec(listint_t *head)
 		return;
 	if (head->next)
 		free_rec(head->next);
-	free (head);
+	free(head);
 }
