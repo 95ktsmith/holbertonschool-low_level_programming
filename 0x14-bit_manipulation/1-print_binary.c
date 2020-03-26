@@ -8,8 +8,8 @@
 
 void print_binary(unsigned long int n)
 {
-	unsigned int bits = 1;
-	unsigned long int place = 1;
+	unsigned long int bits = 1;
+	unsigned long int bit = 1;
 
 	if (n == 0)
 	{
@@ -17,16 +17,9 @@ void print_binary(unsigned long int n)
 		return;
 	}
 
-	while (n >= place)
-	{
-		place <<= 1;
+	while (n >= bit << bits && bits <= 64)
 		bits++;
-	}
 
-	place >>= 1;
-	while (--bits)
-	{
-		_putchar((n & place ? '1' : '0'));
-		place >>= 1;
-	}
+	while (bits--)
+		_putchar((n & bit << bits ? '1' : '0'));
 }
