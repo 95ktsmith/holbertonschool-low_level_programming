@@ -17,5 +17,5 @@ unsigned int flip_bits(unsigned long int n, unsigned long int m)
 	flip = n ^ m;
 	for (index = 0; index < 64; index++)
 		bits += (flip & 1 << index ? 1 : 0);
-	return (bits / 2);
+	return (bits >> 1);
 }
