@@ -17,7 +17,7 @@ void print_binary(unsigned long int n)
 		return;
 	}
 
-	while (n >= bit << bits && bits <= 64)
+	while (n >= bit << bits && bits < 64)
 		bits++;
 
 	while (bits--)
