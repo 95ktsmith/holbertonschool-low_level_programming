@@ -17,7 +17,7 @@ int main(int argc, char **argv)
 
 	if (argc != 3)
 	{
-		dprintf(STDERR_FILENO, "Usage: cp file_from file_to");
+		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
 		exit(97);
 	}
 	file_from = open(argv[1], O_RDONLY);
@@ -68,7 +68,7 @@ void copy_to_file(int file_from, char *from_name, int file_to, char *to_name)
 	while (1)
 	{
 		read_bytes = read(file_from, buffer, 1024);
-		if (read_bytes < 1)
+		if (read_bytes < 0)
 		{
 			dprintf(STDERR_FILENO, "Error: Can't read from %s\n",
 				from_name);
