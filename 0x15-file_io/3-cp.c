@@ -70,8 +70,8 @@ void copy_to_file(int file_from, char *from_name, int file_to, char *to_name)
 		read_bytes = read(file_from, buffer, 1024);
 		if (read_bytes < 0)
 		{
-			dprintf(STDERR_FILENO, "Error: Can't read from %s\n",
-				from_name);
+			dprintf(STDERR_FILENO,
+				"Error: Can't read from file %s\n", from_name);
 			exit(98);
 		}
 		written_bytes = write(file_to, buffer, read_bytes);
