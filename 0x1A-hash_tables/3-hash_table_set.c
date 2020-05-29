@@ -22,10 +22,17 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		return (0);
 
 	index = hash_djb2((const unsigned char *)key) % ht->size;
-	node->key = (char *)key;
+	node->key = strdup(key);
+	if (node->key == NULL)
+	{
+		free(node);
+		return (0);
+	}
+
 	node->value = strdup(value);
 	if (node->value == NULL)
 	{
+		free(node->key);
 		free(node);
 		return (0);
 	}
