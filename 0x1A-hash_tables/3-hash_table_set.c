@@ -1,4 +1,5 @@
 #include "hash_tables.h"
+#include "string.h"
 
 /**
  * hash_table_set - Set a key and value into a slot in the table
@@ -12,13 +13,27 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	unsigned long int index;
 	hash_node_t *node;
 
+	if (ht == NULL || key == NULL || key[0] == '\0')
+		return (0);
+
 	node = malloc(sizeof(hash_node_t));
 	if (node == NULL)
 		return (0);
 
 	index = hash_djb2((const unsigned char *)key) % ht->size;
-	node->key = (char *)key;
-	node->value = (char *)value;
+	node->key = strdup(key);
+	if (node->key == NULL)
+	{
+		free(node);
+		return (0);
+	}
+	node->value = strdup(value);
+	if (node->value == NULL)
+	{
+		free(node->key);
+		free(node);
+		return (0);
+	}
 	node->next = ht->array[index];
 	if (ht->array[index] != NULL)
 		ht->array[index] = node;
