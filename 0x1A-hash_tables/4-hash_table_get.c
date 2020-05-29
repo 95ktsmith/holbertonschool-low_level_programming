@@ -10,7 +10,7 @@ char *hash_table_get(const hash_table_t *ht, const char *key)
 {
 	int index;
 
-	if (ht == NULL || key == NULL)
+	if (ht == NULL || ht->array == NULL || key == NULL)
 		return (NULL);
 
 	index = hash_djb2((const unsigned char *)key) % ht->size;
