@@ -24,14 +24,14 @@ int *binary_rec(int *array, size_t size, int value)
 			printf("%d, ", array[index]);
 	}
 
-	index = size / 2;
+	index = (size - 1) / 2;
 
 	if (array[index] == value)
 		return (array + index);
 	else if (array[index] > value && index != 0)
-		return (binary_rec(array, index - 1, value));
+		return (binary_rec(array, index, value));
 	else if (array[index] < value && (index + 1) < size)
-		return (binary_rec(array + index, size - index, value));
+		return (binary_rec(array + index + 1, size - index - 1, value));
 	return (NULL);
 }
 
