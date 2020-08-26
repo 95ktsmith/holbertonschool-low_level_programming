@@ -29,7 +29,7 @@ int *binary_rec(int *array, size_t size, int value)
 	if (array[index] == value)
 		return (array + index);
 	else if (array[index] > value && index != 0)
-		return (binary_rec(array, index, value));
+		return (binary_rec(array, index - 1, value));
 	else if (array[index] < value && (index + 1) < size)
 		return (binary_rec(array + index, size - index, value));
 	return (NULL);
