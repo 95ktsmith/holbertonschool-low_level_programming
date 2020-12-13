@@ -9,13 +9,16 @@
  */
 int sum_dlistint(dlistint_t *head)
 {
-	const dlistint_t *temp;
-	int sum;
+	dlistint_t *temp;
+	int sum = 0;
 
 	if (head == NULL)
 		return (0);
 	temp = head;
-	for (sum = 0; temp != NULL; sum += temp->n)
+	while (temp != NULL)
+	{
+		sum += temp->n;
 		temp = temp->next;
+	}
 	return (sum);
 }
